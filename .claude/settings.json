@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "deny": [
+      "Read(reference/**)",
+      "Edit(reference/**)",
+      "Read(~/.microsoft/usersecrets/**)",
+      "Read(~/.azure/**)",
+      "Bash(dotnet user-secrets list *)",
+      "Bash(az keyvault secret show *)",
+      "Bash(git commit *)",
+      "Bash(git push *)"
+    ],
+    "ask": [
+      "Bash(az *)",
+      "Bash(podman push *)",
+      "Bash(devtunnel *)"
+    ],
+    "allow": [
+      "Bash(dotnet build *)",
+      "Bash(dotnet restore *)"
+    ]
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|Read|Grep|Glob|Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$CLAUDE_PROJECT_DIR\"/.claude/hooks/guard-reference.sh"
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,2 @@
+# ripgrep (Claude Code's Grep tool) honors .ignore without git-ignoring the folder.
+reference/
