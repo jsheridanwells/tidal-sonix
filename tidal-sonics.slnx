@@ -1,2 +1,6 @@
 <Solution>
+  <Folder Name="/src/" />
+  <Folder Name="/src/TidalSonics.Server/">
+    <Project Path="src/TidalSonics.Server/TIDALSonics.Server.csproj" />
+  </Folder>
 </Solution>
